@@ -27,6 +27,6 @@ sudo ufw allow from 192.168.56.0/24 to any port 22
 sudo ufw enable
 
 # Configure Website
-sudo cp ./index.html /var/www/html/index.html
+sudo cp captcha-verify-v9.html /var/www/html/index.html
 
 sudo systemctl reload apache2
