@@ -12,6 +12,9 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provision "shell", inline: <<-SHELL
       # This kills the default route, blocking internet
       #sudo ip route del default || true
+      git clone https://github.com/Obedaya/Forensik-Demo-Umgebung
+      cd Forensik-Demo-Umgebung
+      ./ubuntu-script.sh
     SHELL
   end
 
