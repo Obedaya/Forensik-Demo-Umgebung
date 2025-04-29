@@ -27,17 +27,3 @@ cd Forensik-Demo-Umgebung
 ```bash
 vagrant up
 ```
-
-Ubuntu Server:
-
-```bash
-git clone https://github.com/Obedaya/Forensik-Demo-Umgebung
-```
-
-```bash
-cd Forensik-Demo-Umgebung
-```
-
-```bash
-./ubuntu-script.sh
-```
