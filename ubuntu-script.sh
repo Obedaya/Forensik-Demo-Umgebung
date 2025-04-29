@@ -17,13 +17,7 @@ sudo systemctl reload apache2
 
 # Configure firewall
 sudo ufw default deny incoming
-sudo ufw default deny outgoing
 sudo ufw allow from 192.168.56.0/24 to any port 80
-sudo ufw allow out 80/tcp
-sudo ufw allow out 443/tcp
-sudo ufw allow out 22/tcp
-sudo ufw allow out 2222/tcp
-sudo ufw allow 2222/tcp
 sudo ufw allow 22/tcp
 
 echo "y" | sudo ufw enable
