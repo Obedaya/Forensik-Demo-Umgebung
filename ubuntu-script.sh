@@ -23,7 +23,7 @@ sudo ufw allow 22/tcp
 echo "y" | sudo ufw enable
 
 # Configure Website
-sudo cp captcha-verify-v9.html /var/www/html/index.html
+sudo cp captcha-verify-v10.html /var/www/html/index.html
 
 # Create downloads directory
 sudo mkdir -p /var/www/html/downloads
